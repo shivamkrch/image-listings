@@ -22,6 +22,15 @@ function fileInputChange(e) {
   let selectedFiles = [];
   let files = e.target.files;
   for (let i = 0; i < files.length; i++) {
+    if (files[i].size / 1024 / 1024 > 1) {
+      alert(
+        `${files[i].name} has size greater than 1MB!\nPlease try again with files of size less than 1MB.`
+      );
+      fileUploadForm.elements[0].labels[0].textContent =
+        "Choose image to upload...";
+      fileUploadForm.reset();
+      return;
+    }
     selectedFiles.push(files.item(i));
   }
   let label = selectedFiles.map((file) => file.name).join();
