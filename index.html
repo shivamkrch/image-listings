@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Image Listings | Firebase Storage Practice</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <style>
+      * {
+        transition: all 0.5s ease;
+      }
+      .progress-bar{
+        transition-property: width;
+        transition-duration: 0.5s;
+      }
+    </style>
+  </head>
+  <body class="bg-light">
+    <div class="container p-2">
+      <h1 class="text-center">Image Listings</h1>
+      <form class="mt-5" onsubmit="onSubmitForm(event)">
+        <div class="input-group">
+          <div class="custom-file">
+            <input
+              type="file"
+              class="custom-file-input"
+              id="image-upload"
+              name="image-upload"
+              aria-describedby="submit-btn"
+              accept="image/*"
+              onchange="fileInputChange(event)"
+              required
+              multiple
+            />
+            <label
+              class="custom-file-label"
+              for="image-upload"
+              style="
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+              "
+              >Choose image to upload...</label
+            >
+          </div>
+          <div class="input-group-append">
+            <button class="btn btn-primary" type="submit" id="submit-btn">
+              Upload
+            </button>
+          </div>
+        </div>
+      </form>
+      <div class="container-fluid mt-4">
+          <div class="row" id="images">
+            
+      </div>
+    </div>
+    <!-- Firebase config -->
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-storage.js"></script>
+
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyAWhHClHip-Ge34JiWjNig3GtM2hpWOvnE",
+        authDomain: "first-firebase-e8fcb.firebaseapp.com",
+        databaseURL: "https://first-firebase-e8fcb.firebaseio.com",
+        projectId: "first-firebase-e8fcb",
+        storageBucket: "first-firebase-e8fcb.appspot.com",
+        messagingSenderId: "33371438872",
+        appId: "1:33371438872:web:9d4ed8d3e7e962ac6d286d",
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+    </script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.slim.min.js"
+      integrity="sha256-MlusDLJIP1GRgLrOflUQtshyP0TwT/RHXsI1wWGnQhs="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+    <script src="script.js"></script>
+  </body>
+</html>
